@@ -1,59 +1,59 @@
-// {/* <div class="vezife-item vezife-tamamlandi"> */}
-//                     <li class="vezife-tanitim">Idmana get</li>
-//                     <button class="vezife-btn vezife-btn-tamamlandi" ><i class="fa fa-check" aria-hidden="true"></i></button>
-//                    <button class="vezife-btn vezife-btn-sil"><i class="fa fa-trash" aria-hidden="true"></i></button>
-//                  </div>
-const newToDoInput = document.querySelector('.input-vezife')
+const newToDoInput = document.querySelector('.input-todo')
+const addToDoBtn = document.querySelector('.btn-todo-elaveet')
+const todoContainer = document.querySelector('.todo-siyahisi')
 
-const addToDoBtn = document.querySelector('.btn-vezife-elaveet')
+addToDoBtn.addEventListener('click', addToDo);
+todoContainer.addEventListener('click', deleteOrRemoveTodoList);
 
-const todoContainer = document.querySelector('.vezife-siyahisi')
 
-addToDoBtn.addEventListener('click', addTodo)
-todoContainer.addEventListener('click', deleteOrRemoveTodoList)
 
-function deleteOrRemoveTodoList(e) {
-    const kliklenenElement = e.target
+function deleteOrRemoveTodoList (e) {
+   const kliklenenElement = e.target
+   if(kliklenenElement.classList.contains('todo-btn-done')) {
+      kliklenenElement.parentElement.classList.toggle('todo-done')
+   }
 
-    if(kliklenenElement.classList.contains('vezife-btn-tamamlandi')) {
-        kliklenenElement.parentElement.classList.toggle('vezife-tamamlandi')
-    }
-
-    if(kliklenenElement.classList.contains('vezife-btn-sil')) {
-        kliklenenElement.parentElement.classList.add('delete')
-    }
+   if(kliklenenElement.classList.contains('todo-btn-sil')) {
+      kliklenenElement.parentElement.classList.add('delete')
+  }
 }
 
-function addTodo(e) {
-    e.preventDefault()
-    const todoDiv = document.createElement('div')
-    todoDiv.classList.add('vezife-item')
+function addToDo (e) {
+   e.preventDefault();
 
-    const todoLi = document.createElement('li')
-    todoLi.classList.add('vezife-tanitim')
-    todoLi.innerText = newToDoInput.value
+   const todoDiv = document.createElement('div');
+   todoDiv.classList.add('todo-item');
 
-    todoDiv.appendChild(todoLi)
+   const todoLi = document.createElement('li');
+   todoLi.classList.add('todo-tanitim');
+   todoLi.innerText = newToDoInput.value;
+   todoDiv.appendChild(todoLi);
 
-    const editBtn = document.createElement('button')
+   const editBtn = document.createElement('button');
+   editBtn.className = 'todo-btn todo-btn-done';
+   editBtn.innerHTML= '<i class="fa fa-check" aria-hidden="true"></i>';
+   todoDiv.appendChild(editBtn);
 
-    editBtn.classList.add('vezife-btn')
-    editBtn.classList.add('vezife-btn-tamamlandi')
-
-    editBtn.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>'
-
-    todoDiv.appendChild(editBtn)
-
-    const todoTrashBtn = document.createElement('button')
-    todoTrashBtn.className = 'vezife-btn vezife-btn-sil'
-    todoTrashBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>'
-    todoDiv.appendChild(todoTrashBtn)
+   const todoTrashBtn = document.createElement('button');
+   todoTrashBtn.className = 'todo-btn todo-btn-sil';
+   todoTrashBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+   todoDiv.appendChild(todoTrashBtn);
 
 
-
-
-
-    todoContainer.appendChild(todoDiv)
-
-    newToDoInput.value = ''
+   todoContainer.appendChild(todoDiv)
+   newToDoInput.value = ''
 }
+
+var i=0,text;
+text = "Here's my To-Do List"
+
+function typing() {
+   if(i<text.length){
+      document.getElementById('text').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing,80);
+   }
+}
+typing()
+
+

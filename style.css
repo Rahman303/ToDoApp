@@ -1,102 +1,96 @@
-:root {
-    --esas-reng: rgba(26, 188, 156,1.0);
-    --esas-reng-opacity:  rgba(26, 188, 156,0.5);
-    --diger-reng:rgba(127, 140, 141,1.0);
-    --diger-reng-opacity:rgba(127, 140, 141,0.5);
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=La+Belle+Aurore&display=swap');
+body{
+   background-image: url(https://live.staticflickr.com/65535/49896451033_bf06cc1a96_b.jpg);
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.header{
+   display: flex;
+   /* text-align: center; */
+   flex-direction: column;
+   padding-top: 80px;
+   padding-left: 5%;
+   font-family: 'Fjalla One', sans-cursive;
+}
+#text{
+   font-size: 30px;
+}
+.todo-form{
+   outline:none;
+   border:none;
+}
+p{
+   font-size: 30px;
+   font-family: 'La Belle Aurore', cursive;
+}
+.form-item{
+   /* position: relative; */
+   border: 0.1px solid rgba(86, 79, 79, 0);
+   background-color: rgba(255, 255, 255, 0);
+   border-radius: 5px;
+   outline:none;
+   border:none;
 }
 
-* {
-    font-family: 'Poppins', sans-serif;
+.todo{
+   padding-left: 5%;
+}
+.todo-container {
+   display: flex;
+   /* justify-content: center;
+   align-items: center; */
+   width: 46%;
+   padding-left: 1%;
 }
 
-
-body {
-    background-image: linear-gradient(to bottom right, var(--esas-reng), var(--diger-reng));
-    background-repeat: no-repeat;
-    min-height: 100vh; 
+.todo-siyahisi {
+   list-style: none;
+   min-width:50%;
+   width: 10%;
 }
 
-
-.main-title {
-    font-size: 3rem;
+.todo-item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0.5rem;
+   font-size: 1.1rem;
+   font-weight: 400;
+   background-color: rgba(255, 255, 255, 0);
+   transition: .5s ease-in-out;
+   padding-left: 3%;
 }
 
-.header, .vezife-form {
-    min-height: 20vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.todo-tanitim {
+   flex: 1;
 }
 
-.form-item {
-    padding: .5rem;
-    font-size: 1.5rem;
-    border: none;
-    outline: none;
-    background-color: white;
+.todo-btn {
+   outline:none;
+   border:none;
+   /* font-size: 2.4rem; */
+   /* padding: 0.5rem; */
+   background: rgba(255, 255, 255, 0);
+}
+.todo-btn:hover{
+   transition: 0.3s;
+   transform: scale(1.02);
 }
 
-.btn-vezife-elaveet {
-    color: var(--diger-reng);
-    cursor: pointer;
+.todo-done {
+   text-decoration: line-through;
+   opacity: 0.5;
 }
-
-.btn-vezife-elaveet:hover{
-    color: rgb(146, 60, 60);
-    background-color: var(--diger-reng);
-}
-
-.vezife-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.vezife-siyahisi {
-    list-style: none;
-    min-width:50%;
-}
-
-.vezife-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    background-color: white;
-    transition: .5s ease-in-out;
-}
-
-.vezife-tanitim {
-    flex:1;
-}
-
-.vezife-btn {
-    outline:none;
-    border:none;
-    font-size: 2.4rem;
-    padding: 0.5rem;
-    background-color: var( --diger-reng);
-}
-
-.vezife-tamamlandi {
-    text-decoration: line-through;
-    opacity: 0.5;
-}
-
-.vezife-btn-sil {
-    background-color: red;
-}
-
 
 .delete{
-    transition: 0.3s;
-    transform:scale(0);
-    /* display: none; */
+   transition: 0.3s;
+   /* transform:scale(0); */
+   display: none;
 }
 
 .fa {
-    pointer-events: none;
+   pointer-events: none;
 }

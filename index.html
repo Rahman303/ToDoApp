@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="./image/s-l1600.png" type="image/x-icon">
+   <title>ToDo</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="main-title">To Do App for IT Brains 6 figure Js developer</h1>
-    </header>
-    <form class="vezife-form" action="#">
-        <input type="text" class="form-item input-vezife" placeholder="Todo Girin Zehmet olmasa">
-        <button class="form-item btn-vezife-elaveet" type="submit">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-    </form>
+       <section class="header">
+         <div id="text"></div>
+         <p>I'd love to know your thought about the coffee</p>
+       </section>
+       <section class="todo">
+         <form action="#" class="todo-form">
+            <input type="text" class="form-item input-todo" placeholder="Type here">
+            <button class="form-item btn-todo-elaveet" type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+         </form>
+       </section>
+       <div class="todo-container">
+         <ul class="todo-siyahisi">
+            <div class="todo-container">
+                   <!-- <div class="todo-item ">
+                       <li class="todo-tanitim">Idmana get</li>
+                       <button class="todo-btn todo-btn-tamamlandi" ><i class="fa fa-check" aria-hidden="true"></i></button>
+                      <button class="todo-btn todo-btn-sil"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div> -->
+           </div>
+         </ul>
+       </div>
+   
 
-<div class="vezife-container">
-    <ul class="vezife-siyahisi">
-        <!-- <div class="vezife-item ">
-            <li class="vezife-tanitim">Idmana get</li>
-            <button class="vezife-btn vezife-btn-tamamlandi" ><i class="fa fa-check" aria-hidden="true"></i></button>
-           <button class="vezife-btn vezife-btn-sil"><i class="fa fa-trash" aria-hidden="true"></i></button>
-         </div> -->
-    </ul>
-</div>
 
-    <script src="https://use.fontawesome.com/4f230f8306.js"></script>
-    <script src="./script.js"></script>
 
-    
+       <script src="./script.js"></script>
 </body>
 </html>
