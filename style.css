@@ -84,7 +84,6 @@ body {
 .vezife-tamamlandi {
     text-decoration: line-through;
     opacity: 0.5;
-
 }
 
 .vezife-btn-sil {
@@ -93,7 +92,9 @@ body {
 
 
 .delete{
-    transform:scale(0)
+    transition: 0.3s;
+    transform:scale(0);
+    /* display: none; */
 }
 
 .fa {

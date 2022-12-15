@@ -10,6 +10,19 @@ const addToDoBtn = document.querySelector('.btn-vezife-elaveet')
 const todoContainer = document.querySelector('.vezife-siyahisi')
 
 addToDoBtn.addEventListener('click', addTodo)
+todoContainer.addEventListener('click', deleteOrRemoveTodoList)
+
+function deleteOrRemoveTodoList(e) {
+    const kliklenenElement = e.target
+
+    if(kliklenenElement.classList.contains('vezife-btn-tamamlandi')) {
+        kliklenenElement.parentElement.classList.toggle('vezife-tamamlandi')
+    }
+
+    if(kliklenenElement.classList.contains('vezife-btn-sil')) {
+        kliklenenElement.parentElement.classList.add('delete')
+    }
+}
 
 function addTodo(e) {
     e.preventDefault()
@@ -31,9 +44,16 @@ function addTodo(e) {
 
     todoDiv.appendChild(editBtn)
 
+    const todoTrashBtn = document.createElement('button')
+    todoTrashBtn.className = 'vezife-btn vezife-btn-sil'
+    todoTrashBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>'
+    todoDiv.appendChild(todoTrashBtn)
+
 
 
 
 
     todoContainer.appendChild(todoDiv)
+
+    newToDoInput.value = ''
 }
